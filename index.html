@@ -28,34 +28,14 @@
     <div class="hero__inner">
       <h1 class="hero__title">Analog kaffe</h1>
       <p class="hero__lede">
-        We're set up at <strong>Hamilton Park</strong> in Jersey City
-        <strong>every other week</strong>. Ceremonial-grade matcha, whisked by
-        hand and served with oat milk. 
+        We're a matcha pop-up at <strong>Hamilton Park</strong> in Jersey City the
+        <strong>first and third Wednesday of every month, 4–7pm</strong>.
+        We serve ceremonial-grade matcha, whisked by hand.
       </p>
       <div class="hero__cta">
-        <a class="btn" href="#events">See when we're out&nbsp;&nbsp;→</a>
-        <a class="btn btn--ghost" href="#menu">View the menu</a>
+        <a class="btn" href="#events">Book an event with us&nbsp;&nbsp;→</a>
+        <a class="btn btn--ghost" href="#menu">See menu</a>
       </div>
-    </div>
-  </section>
-
-  <!-- ///////////////////////////// ABOUT -->
-  <section class="about" id="about">
-    <div class="section-head">
-      <h2 class="section-head__title">A little matcha stand with a slow heart.</h2>
-    </div>
-    <div class="about__grid">
-      <p class="about__lead">
-        Analog kaffe is a matcha pop-up run out of Hamilton Park. No coffee, no
-        rush — just good matcha, whisked to order and poured over oat milk.
-      </p>
-      <p class="about__copy">
-        Everything starts with ceremonial-grade matcha and a bamboo whisk. We
-        keep the menu short and the mornings unhurried. Whether it's a classic
-        latte or a strawberry "mock"cha for the kids, it's made by hand while
-        you wait. Find us in the park every other week — the exact dates live
-        just below.
-      </p>
     </div>
   </section>
 
@@ -122,39 +102,50 @@
     <div class="section-head section-head--light">
       <h2 class="section-head__title">Book us for your event!</h2>
     </div>
-    <p class="events__copy">
-      Lorem ipsum
-    </p>
+
     <div class="events__cta">
-      <p class="events__cta-label">Inquire &amp; say hello</p>
-      <a class="btn btn--big" href="mailto:kaffeanalog@gmail.com?subject=Analog%20Kaffe%20inquiry">kaffeanalog@gmail.com</a>
+      <a class="btn btn--big" href="https://docs.google.com/forms/d/e/1FAIpQLScgFW90LP_1n9WscicyGYg-ijP_uav-g98YFNmuYmY4jK2_1Q/viewform" target="_blank" rel="noopener">Fill out the booking form&nbsp;&nbsp;→</a>
+      <p class="events__cta-alt">Or email us at <a href="mailto:kaffeanalog@gmail.com?subject=Analog%20Kaffe%20inquiry">kaffeanalog@gmail.com</a></p>
     </div>
   </section>
+
+  <!-- ///////////////////////////// ABOUT -->
+  <!-- <section class="about" id="about">
+    <div class="section-head">
+      <h2 class="section-head__title">About us</h2>
+    </div>
+    <div class="about__grid">
+      <p class="about__lead">
+        Analog kaffe is a matcha pop-up run out of Hamilton Park. No coffee, no
+        rush — just good matcha, whisked to order and poured over oat milk.
+      </p>
+      <p class="about__copy">
+        Everything starts with ceremonial-grade matcha and a bamboo whisk. We
+        keep the menu short and the mornings unhurried. Whether it's a classic
+        latte or a strawberry "mock"cha for the kids, it's made by hand while
+        you wait.
+      </p>
+    </div>
+  </section> -->
 
 </main>
 
 <script>
-  // Reveal the nav logo only once the big hero title has scrolled out of view.
+  // Reveal the nav (logo + links) only once the big hero title has scrolled out of view.
   (function () {
-    var logo = document.querySelector('.nav__logo');
+    var reveal = document.querySelectorAll('.nav__logo, .nav__links');
     var title = document.querySelector('.hero__title');
-    if (!logo || !title || !('IntersectionObserver' in window)) {
-      if (logo) logo.classList.add('is-visible');
+    if (!reveal.length || !title || !('IntersectionObserver' in window)) {
+      reveal.forEach(function (el) { el.classList.add('is-visible'); });
       return;
     }
     var io = new IntersectionObserver(function (entries) {
-      logo.classList.toggle('is-visible', !entries[0].isIntersecting);
+      var show = !entries[0].isIntersecting;
+      reveal.forEach(function (el) { el.classList.toggle('is-visible', show); });
     }, { threshold: 0 });
     io.observe(title);
   })();
 </script>
-
-<!-- ///////////////////////////// FOOTER -->
-<footer class="footer">
-  <p class="footer__logo">Analog kaffe</p>
-  <p class="footer__meta">Hamilton Park · Jersey City, NJ · every other week</p>
-  <a class="footer__mail" href="mailto:kaffeanalog@gmail.com">kaffeanalog@gmail.com</a>
-</footer>
 
 </body>
 </html>
