@@ -263,7 +263,7 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
 }
 .menu__note { font-size: .95rem; color: var(--blue-deep); margin-left: auto; text-align: right; }
-.menu__note strong { text-transform: uppercase; letter-spacing: .03em; }
+.menu__note strong { font-weight: 700; }
 
 .menu__list {
   max-width: var(--maxw);
