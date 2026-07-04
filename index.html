@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Analog Kaffe — Matcha at Hamilton Park, Jersey City</title>
+<meta name="description" content="Analog Kaffe is a matcha pop-up at Hamilton Park in Jersey City, every other week. Ceremonial-grade matcha, all served with oat milk." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ///////////////////////////// NAV -->
+<header class="nav">
+  <a class="nav__logo" href="#top">Analog kaffe</a>
+  <nav class="nav__links" aria-label="Main">
+    <a href="#about">About</a>
+    <a href="#events">Events</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ///////////////////////////// HERO -->
+  <section class="hero">
+    <div class="hero__inner">
+      <h1 class="hero__title">Analog kaffe</h1>
+      <p class="hero__lede">
+        We're set up at <strong>Hamilton Park</strong> in Jersey City
+        <strong>every other week</strong>. Ceremonial-grade matcha, whisked by
+        hand and served with oat milk. 
+      </p>
+      <div class="hero__cta">
+        <a class="btn" href="#events">See when we're out&nbsp;&nbsp;→</a>
+        <a class="btn btn--ghost" href="#menu">View the menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ///////////////////////////// ABOUT -->
+  <section class="about" id="about">
+    <div class="section-head">
+      <h2 class="section-head__title">A little matcha stand with a slow heart.</h2>
+    </div>
+    <div class="about__grid">
+      <p class="about__lead">
+        Analog kaffe is a matcha pop-up run out of Hamilton Park. No coffee, no
+        rush — just good matcha, whisked to order and poured over oat milk.
+      </p>
+      <p class="about__copy">
+        Everything starts with ceremonial-grade matcha and a bamboo whisk. We
+        keep the menu short and the mornings unhurried. Whether it's a classic
+        latte or a strawberry "mock"cha for the kids, it's made by hand while
+        you wait. Find us in the park every other week — the exact dates live
+        just below.
+      </p>
+    </div>
+  </section>
+
+  <!-- ///////////////////////////// MENU -->
+  <section class="menu" id="menu">
+    <div class="menu__head">
+      <h2 class="menu__title">Menu</h2>
+      <p class="menu__note">All matcha drinks are served with <strong>oat milk</strong>.</p>
+    </div>
+
+    <ul class="menu__list">
+      <li class="menu__item">
+        <div class="menu__top">
+          <h3 class="menu__name">Classic Matcha Latte</h3>
+          <span class="menu__price">$7</span>
+        </div>
+        <p class="menu__desc">Ceremonial grade matcha, oat milk. Agave syrup available upon request.</p>
+      </li>
+      <li class="menu__item">
+        <div class="menu__top">
+          <h3 class="menu__name">Vanilla Bean Matcha Latte</h3>
+          <span class="menu__price">$7</span>
+        </div>
+        <p class="menu__desc">Ceremonial grade matcha, oat milk, vanilla bean syrup.</p>
+      </li>
+      <li class="menu__item">
+        <div class="menu__top">
+          <h3 class="menu__name">Strawberry Matcha Latte</h3>
+          <span class="menu__price">$7.50</span>
+        </div>
+        <p class="menu__desc">Ceremonial grade matcha, oat milk, strawberry purée.</p>
+      </li>
+      <li class="menu__item">
+        <div class="menu__top">
+          <h3 class="menu__name">Salted Maple Matcha Latte</h3>
+          <span class="menu__price">$7</span>
+        </div>
+        <p class="menu__desc">Ceremonial grade matcha, oat milk, organic maple syrup.</p>
+      </li>
+      <li class="menu__item">
+        <div class="menu__top">
+          <h3 class="menu__name">Yuzu Refresher</h3>
+          <span class="menu__price">$6</span>
+        </div>
+        <p class="menu__desc">Sparkling water, yuzu purée.</p>
+      </li>
+      <li class="menu__item">
+        <div class="menu__top">
+          <h3 class="menu__name">Strawberry "Mock"cha</h3>
+          <span class="menu__price">$4</span>
+        </div>
+        <p class="menu__desc">Oat milk, strawberry purée — for kids and grown ups alike!</p>
+      </li>
+    </ul>
+
+    <div class="menu__addons">
+      <span class="menu__addons-label">Add ons</span>
+      <span class="menu__addons-item">Cold foam <strong>+$1</strong></span>
+    </div>
+  </section>
+
+  <!-- ///////////////////////////// EVENTS -->
+  <section class="events" id="events">
+    <div class="section-head section-head--light">
+      <h2 class="section-head__title">Book us for your event!</h2>
+    </div>
+    <p class="events__copy">
+      Lorem ipsum
+    </p>
+    <div class="events__cta">
+      <p class="events__cta-label">Inquire &amp; say hello</p>
+      <a class="btn btn--big" href="mailto:kaffeanalog@gmail.com?subject=Analog%20Kaffe%20inquiry">kaffeanalog@gmail.com</a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Reveal the nav logo only once the big hero title has scrolled out of view.
+  (function () {
+    var logo = document.querySelector('.nav__logo');
+    var title = document.querySelector('.hero__title');
+    if (!logo || !title || !('IntersectionObserver' in window)) {
+      if (logo) logo.classList.add('is-visible');
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      logo.classList.toggle('is-visible', !entries[0].isIntersecting);
+    }, { threshold: 0 });
+    io.observe(title);
+  })();
+</script>
+
+<!-- ///////////////////////////// FOOTER -->
+<footer class="footer">
+  <p class="footer__logo">Analog kaffe</p>
+  <p class="footer__meta">Hamilton Park · Jersey City, NJ · every other week</p>
+  <a class="footer__mail" href="mailto:kaffeanalog@gmail.com">kaffeanalog@gmail.com</a>
+</footer>
+
+</body>
+</html>
